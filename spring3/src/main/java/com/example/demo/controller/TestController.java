@@ -57,6 +57,10 @@ public class TestController {
 
 	@PostMapping("/register")
 	public String m5(@ModelAttribute MemberForm memberForm, Model model) {
-		return "";
+		System.out.println(memberForm.getAccount());
+		System.out.println(memberForm.getPasswd());
+		System.out.println(memberForm.getCname());
+		model.addAttribute("msg","註冊成功");
+		return "register";
 	}
 }
