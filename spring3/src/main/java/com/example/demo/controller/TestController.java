@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -55,7 +56,7 @@ public class TestController {
 	}
 
 	@PostMapping("/register")
-	public String m5(Model model) {
+	public String m5(@ModelAttribute MemberForm memberForm, Model model) {
 		return "";
 	}
 }
