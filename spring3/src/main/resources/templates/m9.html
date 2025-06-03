@@ -1,0 +1,45 @@
+<meta charset="UTF-8" />
+<head>
+<style>
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: 2px auto;
+}
+
+th, td {
+	border: 1px solid #444;
+	padding: 1px 2px;
+	text-align: center;
+}
+
+th {
+	background-color: #77f7f7;
+}
+
+.odd-row {
+	background-color: pink;
+}
+
+.even-row {
+	background-color: yellow;
+}
+</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Index</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="name, status : ${names}"
+				th:classappend="${status.odd ? 'odd-row' : 'even-row'}">
+				<td th:text="${status.index}"></td>
+				<td th:text="${name}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>

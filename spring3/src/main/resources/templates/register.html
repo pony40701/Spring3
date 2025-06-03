@@ -1,22 +1,33 @@
-<html xmlns:th="https://www.thymeleaf.org">
-<meta charset="UTF-8" />
-<form th:action="@{/test/register}" method="post"
+<meta charset="UTF-8">
+<form method="post" th:action="@{/test/register}"
 	th:object="${memberForm}">
 	<div>
 		<label>Account:</label> <input type="text" th:field="*{account}"
-			required>
+			required />
 	</div>
 	<div>
 		<label>Password:</label> <input type="password" th:field="*{passwd}"
-			required>
+			required />
 	</div>
 	<div>
-		<label>Name:</label> <input type="text" th:field="*{cname}" required>
+		<label>Name:</label> <input type="text" th:field="*{cname}" required />
+	</div>
+	<div>
+		<label>Area:</label> <select th:field="*{area}">
+			<!--  
+			<option th:each="a : ${areas}" th:text="${a}" th:value="${a}"></option>
+			-->
+			<option th:each="a : ${areas}" th:text="${a.name}"
+				th:value="${a.zipcode}"></option>
+
+		</select>
+
 	</div>
 
 	<button type="submit">Register</button>
+
 </form>
 <hr />
 <div th:if="${msg}" th:text="${msg}">呈現註冊狀態</div>
-</html>
->
+
+

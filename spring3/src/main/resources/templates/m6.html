@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<head>
+	<style>
+		.label {
+			color: #fff;
+			display: inline-block;
+			border-radius: 4px;
+			padding: 2px 4px;
+		}
+		.s1 {background-color: #31fdff;}
+		.s2 {background-color: #ffb961;}
+		.s3 {background-color: #32cd6d;}
+		.s4 {background-color: #f7f7f7;}
+	</style>
+</head>
+<div th:switch="${status}">
+	<div th:case="s1" class="label s1">
+		狀態1
+	</div>
+	<div th:case="s2" class="label s2">
+		狀態2
+	</div>
+	<div th:case="s3" class="label s3">
+		狀態3
+	</div>
+	<div th:case="*" class="label s4">
+		其他狀態
+	</div>
+</div>
